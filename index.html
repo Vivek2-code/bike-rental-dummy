@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev2Desk | Vehicle Rentals</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="bg-white shadow sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">Dev2Desk Rentals</h1>
+            <nav class="space-x-6 hidden md:block">
+                <a href="#home" class="hover:text-blue-600">Home</a>
+                <a href="#vehicles" class="hover:text-blue-600">Vehicles</a>
+                <a href="#book" class="hover:text-blue-600">Book</a>
+                <a href="#enquiry" class="hover:text-blue-600">Enquiry</a>
+                <a href="#location" class="hover:text-blue-600">Location</a>
+                <a href="#privacy" class="hover:text-blue-600">Privacy</a>
+                <a href="#contact" class="hover:text-blue-600">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-br from-blue-700 to-indigo-700 text-white py-24 text-center">
+        <h2 class="text-5xl font-bold mb-4">Your Ride, Our Pride</h2>
+        <p class="text-xl mb-6">Affordable bike & car rentals for daily travel, weekend getaways & more.</p>
+        <p class="text-lg font-light italic mb-4">"We don’t just rent vehicles, we deliver experience."</p>
+        <a href="#book"
+            class="mt-4 inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold shadow-lg">Book Now</a>
+    </section>
+
+    <!-- Vehicles Section -->
+    <section id="vehicles" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-4xl font-bold text-center mb-8">Explore Our Fleet</h3>
+            <div class="grid md:grid-cols-3 gap-6" id="vehicle-list"></div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="book" class="py-16 bg-white">
+        <div class="max-w-xl mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-6 text-center">Book a Ride</h3>
+            <form class="space-y-4" onsubmit="handleBooking(event)">
+                <input type="text" placeholder="Full Name" class="w-full border px-4 py-2 rounded" required>
+                <input type="email" placeholder="Email Address" class="w-full border px-4 py-2 rounded" required>
+                <select id="vehicleSelect" class="w-full border px-4 py-2 rounded" required></select>
+                <input type="date" class="w-full border px-4 py-2 rounded" required>
+                <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Book
+                    Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Enquiry Form -->
+    <section id="enquiry" class="py-16 bg-gray-100">
+        <div class="max-w-xl mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-6 text-center">Enquiry</h3>
+            <form class="space-y-4">
+                <input type="text" placeholder="Name" class="w-full border px-4 py-2 rounded" required>
+                <input type="text" placeholder="Phone Number" class="w-full border px-4 py-2 rounded" required>
+                <textarea placeholder="Your Query..." class="w-full border px-4 py-2 rounded" rows="4"></textarea>
+                <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700">Submit
+                    Enquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-4">Our Location</h3>
+            <p class="mb-4">Visit our pickup & drop facility anytime between 8AM to 8PM.</p>
+            <iframe class="w-full h-64 rounded-lg"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.8485017539995!2d85.13756477503674!3d25.59118057745711!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58454c4f06c7%3A0xf76b418d3bbf8f83!2sPatna%20Junction!5e0!3m2!1sen!2sin!4v1710000000000"
+                allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- Privacy Policy -->
+    <section id="privacy" class="py-12 bg-gray-100">
+        <div class="max-w-3xl mx-auto px-4">
+            <h3 class="text-2xl font-bold mb-4">Privacy Policy</h3>
+            <p class="mb-2">We value your privacy. All personal data collected during booking is stored securely and is
+                not shared with third-party vendors.</p>
+            <p class="mb-2">By using our services, you agree to our terms and privacy guidelines outlined on this page.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Contact -->
+    <footer id="contact" class="bg-gray-900 text-white py-10">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+            <div>
+                <h4 class="text-xl font-bold mb-2">Dev2Desk Rentals</h4>
+                <p class="text-sm">Affordable Bike & Car Rentals in Your City</p>
+                <p class="mt-2">Follow us:<br />
+                    <a href="#" class="text-blue-400">@dev2desk_rentals</a> |
+                    <a href="#" class="text-blue-400">facebook.com/dev2desk</a>
+                </p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-2">Contact Info</h4>
+                <p>Email: info@dev2desk.in</p>
+                <p>Phone: 8890043675</p>
+                <p>Address: Near Patna Station, Bihar</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-2">Quick Contact Form</h4>
+                <form class="space-y-2">
+                    <input type="text" placeholder="Name" class="w-full px-2 py-1 rounded">
+                    <input type="text" placeholder="Mobile" class="w-full px-2 py-1 rounded">
+                    <textarea placeholder="Message..." class="w-full px-2 py-1 rounded"></textarea>
+                    <button class="w-full bg-blue-600 text-white py-1 rounded">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center mt-6 text-sm">© 2025 Dev2Desk. All rights reserved.</div>
+    </footer>
+
+    <script>
+        const vehicles = [
+            { name: 'Bajaj Pulsar', type: 'Bike', price: '₹499/day' },
+            { name: 'Royal Enfield Classic', type: 'Bike', price: '₹699/day' },
+            { name: 'Honda Activa', type: 'Scooter', price: '₹399/day' },
+            { name: 'TVS Apache', type: 'Bike', price: '₹450/day' },
+            { name: 'Yamaha R15', type: 'Bike', price: '₹599/day' },
+            { name: 'KTM Duke 200', type: 'Bike', price: '₹650/day' },
+            { name: 'Suzuki Access', type: 'Scooter', price: '₹349/day' },
+            { name: 'Mahindra Thar', type: 'Car', price: '₹1599/day' },
+            { name: 'Hyundai i20', type: 'Car', price: '₹999/day' },
+            { name: 'Maruti Swift', type: 'Car', price: '₹899/day' },
+            { name: 'Toyota Innova', type: 'Car', price: '₹1299/day' },
+            { name: 'Honda City', type: 'Car', price: '₹1199/day' },
+            { name: 'Tata Nexon', type: 'Car', price: '₹1099/day' },
+            { name: 'Royal Enfield Meteor', type: 'Bike', price: '₹749/day' },
+            { name: 'Hero Splendor Plus', type: 'Bike', price: '₹299/day' },
+        ];
+
+        const grid = document.getElementById("vehicle-list");
+        const select = document.getElementById("vehicleSelect");
+
+        vehicles.forEach(vehicle => {
+            const card = document.createElement("div");
+            card.className = "bg-white p-4 rounded-lg shadow hover:shadow-xl transition";
+            card.innerHTML = `
+        <img src="https://source.unsplash.com/300x200/?${vehicle.name.replace(/ /g, '+')}" alt="${vehicle.name}" class="rounded mb-4 w-full h-48 object-cover">
+        <h4 class="text-xl font-semibold mb-1">${vehicle.name}</h4>
+        <p class="text-sm text-gray-600 mb-1">Type: ${vehicle.type}</p>
+        <p class="font-bold text-blue-600">${vehicle.price}</p>
+      `;
+            grid.appendChild(card);
+
+            const option = document.createElement("option");
+            option.value = vehicle.name;
+            option.textContent = vehicle.name;
+            select.appendChild(option);
+        });
+
+        function handleBooking(event) {
+            event.preventDefault();
+            alert("Thank you! Your booking has been received.");
+        }
+    </script>
+
+</body>
+
+</html>
